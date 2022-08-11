@@ -1,0 +1,33 @@
+.carrd{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 300px 1fr;
+}
+
+.scroll {
+  grid-row: 1/2;
+  display: flex;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  height: 300px;
+  width: 100%;
+}
+
+.card-body{
+  grid-row: 2/3 ;
+}
+
+
+
+img{
+  width: 300px;
+  height: 300px;
+  margin-right: 1rem;
+}
+
+
+
+
+
+

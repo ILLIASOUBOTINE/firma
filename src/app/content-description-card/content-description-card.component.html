@@ -1,0 +1,20 @@
+
+
+<div class="container-fluid carrd">
+
+    <div class="scroll">
+      <div  *ngFor="let photo of card.photos">
+        <img src="{{photo}}"   alt="...">
+      </div>
+    </div>
+
+
+    <div class="card-body">
+      <h3 class="card-title">{{card.title}}</h3>
+      <p class="card-text">цена: {{card.price}}</p>
+      <p class="card-text">сроки выполнения: {{card.terms}}</p>
+      <p class="card-text">{{card.descriptionText}}</p>
+      <button class="btn btn-primary" routerLink="/content_home">Go to home</button>
+    </div>
+
+</div>

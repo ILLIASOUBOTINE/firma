@@ -1,0 +1,36 @@
+
+
+<div >
+  <div class="d-flex justify-content-center">
+    <p class="total"> Order number: {{order.numberOrder}}</p>
+  </div>
+</div>
+
+<table class="table table-striped table-hover">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">name</th>
+    <th scope="col">price</th>
+    <th scope="col">amount</th>
+    <th scope="col">unit</th>
+    <th scope="col">sum</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of order.commands">
+    <th scope="row">{{product.id}}</th>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.amount}}</td>
+    <td>{{product.unit}}</td>
+    <td>{{product.sum}}</td>
+  </tr>
+  </tbody>
+</table>
+<div >
+  <div class="d-flex justify-content-end">
+    <p class="total">Total: {{order.total}} $</p>
+  </div>
+</div>
+<hr>

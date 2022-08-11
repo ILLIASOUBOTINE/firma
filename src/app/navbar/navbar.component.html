@@ -1,0 +1,29 @@
+
+
+<div class="container-fluid ">
+  <ul class="nav nav-pills">
+    <li class=" nav-item " >
+      <a class="nav-link "  routerLink="/content_home" > Home</a>
+<!--      <button class="btn nav-link " (click)="setSwitch('home')"> Home</button>-->
+    </li>
+    <li class="nav-item dropdown">
+      <button class="btn nav-link dropdown-toggle" data-bs-toggle="dropdown"  role="button" aria-expanded="false">Services</button>
+      <ul class="dropdown-menu" >
+        <li><button class="btn dropdown-item" >Consultation</button></li>
+        <li><hr class="dropdown-divider"></li>
+            <li ><a class="dropdown-item" routerLink="/content_product"  >List of works</a></li>
+<!--        <li ><button class="btn dropdown-item"   (click)="setSwitch('product')">List of works</button></li>-->
+        <li><hr class="dropdown-divider"></li>
+        <li><button class="btn dropdown-item" routerLink="/calculator" >Calculator</button></li>
+      </ul>
+    </li>
+    <li class=" nav-item">
+      <a class="nav-link "  routerLink="/contacts" >Contacts </a>
+<!--      <button class="btn nav-link" (click)="setSwitch('contacts')">Contacts</button>-->
+    </li>
+    <li class=" nav-item">
+      <a class="nav-link "  routerLink="/client_perso" > Client perso</a>
+<!--      <button class="btn nav-link" >Client perso</button>-->
+    </li>
+  </ul>
+</div>

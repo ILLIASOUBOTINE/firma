@@ -1,0 +1,15 @@
+
+input{
+  width: 50%;
+}
+
+button{
+  margin-bottom: 10px;
+
+}
+
+.total{
+  color: blue;
+  font-size: 150%;
+
+}

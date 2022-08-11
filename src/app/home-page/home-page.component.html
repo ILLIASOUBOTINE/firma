@@ -1,0 +1,41 @@
+
+<div class="wrapperr" >
+  <div class="box header">
+    <!--    <h2>Header </h2>-->
+    <app-header></app-header>
+  </div>
+  <div class="box navbarr ">
+    <!--    navbar-->
+    <app-navbar></app-navbar>
+  </div>
+  <div class="box left-side">
+<!--        leftside-->
+    <app-carusel></app-carusel>
+<!--    <div *ngIf="switch1 != 'descriptionCard'">-->
+<!--      <app-carusel (onSwitchCarusel)="getSwitchCarusel($event)"></app-carusel>-->
+<!--    </div>-->
+
+  </div>
+  <div class="box content">
+        content
+<!--    <app-routing-content></app-routing-content>-->
+    <router-outlet></router-outlet>
+<!--    <div *ngIf="switch1 == 'home'">-->
+<!--      <app-content-home-page></app-content-home-page>-->
+<!--    </div>-->
+<!--    <div  *ngIf="switch1 == 'product'">-->
+<!--      <app-listofworks></app-listofworks>-->
+<!--    </div>-->
+<!--    <div  *ngIf="switch1 == 'descriptionCard'">-->
+<!--      <app-description-card [idCard]="idCard"></app-description-card>-->
+<!--    </div>-->
+  </div>
+  <div class="box right-side">
+    rightside
+  </div>
+  <div class="box footer">
+    footer
+  </div>
+</div>
+
+

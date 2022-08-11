@@ -1,0 +1,85 @@
+{
+  "orders": [
+    {
+      "nameClient": "User",
+      "numberOrder": 112,
+      "commands": [
+        {
+          "id": 2,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 10,
+          "unit": "m2",
+          "sum": 100
+        }
+      ],
+      "total": 100,
+      "id": 1
+    }
+  ],
+  "clients": [
+    {
+      "name": "s",
+      "lastName": "s",
+      "username": "s",
+      "password": "s",
+      "email": "s",
+      "phoneNumber": "s",
+      "id": 1
+    },
+    {
+      "name": "d",
+      "lastName": "d",
+      "username": "d",
+      "password": "d",
+      "email": "d",
+      "phoneNumber": "d",
+      "id": 2
+    },
+    {
+      "name": "",
+      "lastName": "",
+      "username": "",
+      "password": "s",
+      "email": "s",
+      "phoneNumber": "s",
+      "id": 3
+    },
+    {
+      "name": "Egor",
+      "lastName": "Semenuk",
+      "username": "User",
+      "password": "Semenuk",
+      "email": "egor@gmail.com",
+      "phoneNumber": "1234455",
+      "id": 4
+    },
+    {
+      "name": "y",
+      "lastName": "y",
+      "username": "y",
+      "password": "y",
+      "email": "y",
+      "phoneNumber": "y",
+      "id": 5
+    },
+    {
+      "name": "u",
+      "lastName": "u",
+      "username": "u",
+      "password": "u",
+      "email": "u",
+      "phoneNumber": "u",
+      "id": 6
+    },
+    {
+      "name": "v",
+      "lastName": "v",
+      "username": "v",
+      "password": "v",
+      "email": "v",
+      "phoneNumber": "v",
+      "id": 7
+    }
+  ]
+}

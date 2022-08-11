@@ -1,0 +1,14 @@
+
+
+.header{
+  margin-top: 1em;
+
+  display: grid;
+  min-height: 50px;
+  background-color: #a2b1cb;
+}
+h2{
+  text-align: center;
+  color: #813d5f;
+
+}

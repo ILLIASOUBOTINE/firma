@@ -3,6 +3,8 @@ import {TABLE_PRODUCT} from "../models/table";
 import {Product} from "../enttity/product";
 import {PreOrderService} from "../service/pre-order.service";
 import {PreOrder} from "../enttity/pre-order";
+import {Order} from "../enttity/order";
+
 
 @Component({
   selector: 'app-calculator',
@@ -14,6 +16,9 @@ export class CalculatorComponent implements OnInit {
   total:number;
   varr: number[] = [];
   preOrders: PreOrder[] = [];
+  counter:number = 0;
+  order: Order;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -33,14 +38,33 @@ export class CalculatorComponent implements OnInit {
       }
       val = val+value;
     });
+
+    this.preOrders = this.sorrtArr(this.preOrders,counter);
+    PreOrderService.order = this.setDemiOrder(this.preOrders, val);
     this.total = val;
+    this.counter = counter;
+
+
     console.log(this.total);
 
-    PreOrderService.preOrders = this.preOrders;
-    PreOrderService.total = this.total;
-    PreOrderService.counter = counter;
-    console.log(this.preOrders);
+    // PreOrderService.preOrders = this.preOrders;
+    // PreOrderService.total = this.total;
+    // PreOrderService.counter = counter;
+    console.log(this.order);
   }
+
+  sorrtArr(arr:PreOrder[], counter:number):PreOrder[]{
+    arr.sort(function (a,b){return (a.id - b.id)});
+    arr = arr.slice(0,(counter));
+    console.log(arr)
+    return arr;
+  }
+
+  setDemiOrder(preOrder: PreOrder[],total:number):Order{
+    this.order = {commands:preOrder, total:total};
+    return this.order;
+  }
+
 
 
 }

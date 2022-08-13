@@ -23,6 +23,7 @@ import {ClientPersoService} from "./service/client-perso.service";
 import { Registration1Component } from './registration1/registration1.component';
 import {AutentificationComponent} from "./autentification/autentification.component";
 import {OrderComponent} from "./order/order.component";
+import {AuthService} from "./service/auth.service";
 
 
 
@@ -54,7 +55,8 @@ import {OrderComponent} from "./order/order.component";
   providers: [
     CaruselService,
     PreOrderService,
-    ClientPersoService
+    ClientPersoService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

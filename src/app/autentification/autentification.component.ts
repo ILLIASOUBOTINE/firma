@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Client} from "../enttity/client";
+import {ClientPersoService} from "../service/client-perso.service";
 
 @Component({
   selector: 'app-autentification',
@@ -7,32 +8,35 @@ import {Client} from "../enttity/client";
   styleUrls: ['./autentification.component.css']
 })
 export class AutentificationComponent implements OnInit {
-  nameClient: string;
-  client: Client;
-  clients: Client[] ;
   messageError:string;
+  clients: Client[];
+  username: string;
 
-  constructor() { }
+  client: Client;
+  exist:boolean = true;
+
+
+
+  constructor(private clientService : ClientPersoService) { }
 
   ngOnInit(): void {
   }
 
-  // getPagePerso(element: HTMLInputElement) {
-  //   this.nameClient = element.value;
-  //   this.clientServer.getClientByUsername(this.nameClient).subscribe(result=>{this.clients = result;
-  //     this.autentificationClient();
-  //     console.log(result)});
-  //
-  // }
-  //
-  // autentificationClient(){
-  //   if(this.clients.length == 0){
-  //     this.messageError = 'incorrect username'
-  //   }else {
-  //     this.exist = false;
-  //     this.client = this.clients[0];
-  //   }
-  //   console.log(this.client);
-  // }
+  getPagePerso(element: HTMLInputElement) {
+    this.username = element.value;
+    this.clientService.getClientByUsername(this.username).subscribe(result=>{this.clients = result;
+      this.autentificationClient();});
+
+  }
+
+  autentificationClient(){
+    if(this.clients.length == 0){
+      this.messageError = 'incorrect username'
+    }else {
+      this.exist = false;
+      this.client = this.clients[0];
+    }
+    //console.log(this.client);
+  }
 
 }

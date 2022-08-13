@@ -4,11 +4,13 @@ import {HttpClient} from "@angular/common/http";
 import {Order} from "../enttity/order";
 import {Observable} from "rxjs";
 import {Client} from "../enttity/client";
+import {Auth} from "../enttity/auth";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientPersoService {
+  auth: Auth;
 
   constructor(private http: HttpClient) { }
 

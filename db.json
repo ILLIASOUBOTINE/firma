@@ -15,6 +15,38 @@
       ],
       "total": 100,
       "id": 1
+    },
+    {
+      "commands": [
+        {
+          "id": 13,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 14,
+          "unit": "m2",
+          "sum": 140
+        },
+        {
+          "id": 20,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 14,
+          "unit": "m2",
+          "sum": 140
+        },
+        {
+          "id": 21,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 4,
+          "unit": "m2",
+          "sum": 40
+        }
+      ],
+      "total": 320,
+      "nameClient": "User",
+      "numberOrder": 112,
+      "id": 2
     }
   ],
   "clients": [
@@ -53,33 +85,7 @@
       "email": "egor@gmail.com",
       "phoneNumber": "1234455",
       "id": 4
-    },
-    {
-      "name": "y",
-      "lastName": "y",
-      "username": "y",
-      "password": "y",
-      "email": "y",
-      "phoneNumber": "y",
-      "id": 5
-    },
-    {
-      "name": "u",
-      "lastName": "u",
-      "username": "u",
-      "password": "u",
-      "email": "u",
-      "phoneNumber": "u",
-      "id": 6
-    },
-    {
-      "name": "v",
-      "lastName": "v",
-      "username": "v",
-      "password": "v",
-      "email": "v",
-      "phoneNumber": "v",
-      "id": 7
     }
+
   ]
 }

@@ -9,11 +9,11 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./registration1.component.css']
 })
 export class Registration1Component implements OnInit, DoCheck{
-  // newClient: Client;
-  // form: FormGroup;
-  // sizeArr:number;
-  // message:string;
-  // switch2:boolean = true;
+  newClient: Client;
+  form: FormGroup;
+  sizeArr:number;
+  message:string;
+  switch2:boolean = true;
 
   constructor(public clientPersoService: ClientPersoService) { }
 
@@ -31,7 +31,7 @@ export class Registration1Component implements OnInit, DoCheck{
     //   phoneNumber: new FormControl('')
     // });
   }
-
+  //
   // saveNewClient() {
   //
   //   this.newClient = this.form.value;

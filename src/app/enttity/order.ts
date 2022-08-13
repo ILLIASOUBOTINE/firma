@@ -5,8 +5,8 @@ import {PreOrder} from "./pre-order";
 
 export class Order{
   id?:number;
-  numberOrder:number;
-  nameClient:string;
+  numberOrder?:number;
+  nameClient?:string;
   commands:PreOrder[];
   total: number;
   //lastNameClient:string;

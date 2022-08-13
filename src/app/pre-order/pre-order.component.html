@@ -15,7 +15,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let product of preOrders">
+    <tr *ngFor="let product of demiOrder.commands">
       <th scope="row">{{product.id}}</th>
       <td>{{product.name}}</td>
       <td>{{product.price}}</td>
@@ -26,7 +26,7 @@
     </tbody>
   </table>
   <div class="row ">
-    <p class="col col-auto me-auto total">Total: {{total}} $</p>
+    <p class="col col-auto me-auto total">Total: {{demiOrder.total}} $</p>
     <div class="col col-auto">
       <button class="btn btn-primary" (click)="saveOrder()"  routerLink="/content_home"> Save order</button>
     </div>

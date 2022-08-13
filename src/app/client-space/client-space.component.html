@@ -33,15 +33,15 @@
 </div>
 
 <div *ngIf="exist">
-<!-- <app-autentification></app-autentification>-->
-  <div class="input-group ">
-    <span class="input-group-text">Entre your username</span>
-    <input type="text" aria-label="name" class="form-control" #inputUsername>
-    <button type="button" class="btn btn-primary" (click)="getPagePerso(inputUsername)">sign in</button>
-  </div>
-  <div class="message-error" *ngIf="messageError">
-    <p>{{messageError}}</p>
-  </div>
+ <app-autentification ></app-autentification>
+<!--  <div class="input-group ">-->
+<!--    <span class="input-group-text">Entre your username</span>-->
+<!--    <input type="text" aria-label="name" class="form-control" #inputUsername>-->
+<!--    <button type="button" class="btn btn-primary" (click)="getPagePerso(inputUsername)">sign in</button>-->
+<!--  </div>-->
+<!--  <div class="message-error" *ngIf="messageError">-->
+<!--    <p>{{messageError}}</p>-->
+<!--  </div>-->
 </div>
 
 <div *ngFor="let order of clientOrder">

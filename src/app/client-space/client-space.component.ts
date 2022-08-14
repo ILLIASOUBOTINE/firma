@@ -6,6 +6,7 @@ import {OrdersClientComponent} from "../orders-client/orders-client.component";
 
 import {Client} from "../enttity/client";
 import {AutentificationComponent} from "../autentification/autentification.component";
+import {PreOrderService} from "../service/pre-order.service";
 
 
 @Component({
@@ -15,27 +16,39 @@ import {AutentificationComponent} from "../autentification/autentification.compo
 })
 export class ClientSpaceComponent implements OnInit, DoCheck, AfterViewInit, AfterContentChecked,AfterViewChecked {
   clientOrder: Order[];
-  exist: boolean = true;
+  exist: boolean ;
   client: Client;
   messageOrders: string;
   switchAuth:boolean = false;
+  messagePreOrder:string;
   // @ViewChild('auth') viewChild: ElementRef;
 
 
-  constructor(private clientServer: ClientPersoService, private authService: AuthService) { }
+  constructor(private clientServer: ClientPersoService, private authService: AuthService, private preOrderService: PreOrderService) { }
 
   ngDoCheck(): void {
-    // this.authService.client$.subscribe((e)=>this.client = e);
+    this.messagePreOrder = AuthService.messagePreOrder;
+    console.log(PreOrderService.order);
+    console.log(AuthService.messagePreOrder);
+
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.client = AuthService.client;
+    this.exist = AuthService.exist;
+
+  }
 
   ngAfterContentChecked(): void{}
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+
+  }
 
 
-   ngAfterViewChecked(): void {}
+   ngAfterViewChecked(): void {
+
+   }
 
 
 
@@ -43,14 +56,15 @@ export class ClientSpaceComponent implements OnInit, DoCheck, AfterViewInit, Aft
 
     this.clientServer.getOrderClient(this.client.username).subscribe(result => {this.clientOrder = result;
     this.controlOrders();
-    });
+    AuthService.clientOrder = this.clientOrder});
     //console.log(this.clientOrder);
   }
 
 
 
   controlOrders(){
-    this.authService.clientOrder$.next(this.clientOrder);
+    //this.authService.clientOrder$.next(this.clientOrder);
+
     if(this.clientOrder.length == 0){
       this.messageOrders = 'You don\'t have any orders';
     }
@@ -61,13 +75,13 @@ export class ClientSpaceComponent implements OnInit, DoCheck, AfterViewInit, Aft
   setClientAndExist(transferInformationClient:{ client:Client, exist:boolean}) {
     this.client = transferInformationClient.client;
     this.exist = transferInformationClient.exist;
-
-
   }
 
   getAuth() {
     this.switchAuth = !this.switchAuth;
+
   }
+
 
 
 }

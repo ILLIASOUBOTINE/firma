@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Client} from "../enttity/client";
 import {ClientPersoService} from "../service/client-perso.service";
 import {AuthService} from "../service/auth.service";
+import {PreOrderService} from "../service/pre-order.service";
 
 export interface transferInformationClient{
   client:Client;
@@ -20,15 +21,21 @@ export class AutentificationComponent implements OnInit {
   password:string;
   //transferInformationClient:transferInformationClient;
   client: Client;
-  exist:boolean = true;
+  exist:boolean;
   @Output('singIn') setTransferInformationClient = new EventEmitter<transferInformationClient>();
 
 
 
 
-  constructor(private clientService : ClientPersoService, private authService: AuthService) { }
+  constructor(private clientService : ClientPersoService, private authService: AuthService, private preOrderService: PreOrderService) { }
 
   ngOnInit(): void {
+    this.exist = AuthService.exist;
+    //this.authService.exist$.subscribe((e)=>{this.getExistByAuthService(e);})
+  }
+
+  getExistByAuthService(e:boolean){
+    this.exist = e;
   }
 
   getPagePerso(elementUsername: HTMLInputElement, elementPassword: HTMLInputElement,) {
@@ -47,12 +54,17 @@ export class AutentificationComponent implements OnInit {
       if(this.client.password == this.password){
         this.authService.client$.next(this.client);
         this.exist = false;
+        AuthService.exist = this.exist;
+        AuthService.client = this.client;
+       // this.authService.exist$.next(this.exist);
+          this.fooo();
         this.setTransferInformationClient.emit({client: this.client, exist:this.exist});
 
         AuthService.auth.username = this.client.username;
         AuthService.auth.password = this.client.password;
         AuthService.auth.activ = true;
         console.log(AuthService.auth);
+
 
       }else {
         this.messageError = 'incorrect username or password';
@@ -61,6 +73,16 @@ export class AutentificationComponent implements OnInit {
 
     }
     //console.log(this.client);
+  }
+
+  fooo() {
+    if(PreOrderService.order != undefined && AuthService.client != undefined){
+      this.preOrderService.saveOrder().subscribe((e)=>console.log(e));
+
+    }
+    console.log(PreOrderService.order);
+    console.log(AuthService.client);
+    //this.preOrderService.saveOrder().subscribe((e)=>console.log(e));
   }
 
 }

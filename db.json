@@ -47,6 +47,121 @@
       "nameClient": "user",
       "numberOrder": 112,
       "id": 2
+    },
+    {
+      "commands": [
+        {
+          "id": 2,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 12,
+          "unit": "m2",
+          "sum": 120
+        },
+        {
+          "id": 16,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 12,
+          "unit": "m2",
+          "sum": 120
+        },
+        {
+          "id": 21,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 12,
+          "unit": "m2",
+          "sum": 120
+        }
+      ],
+      "total": 360,
+      "nameClient": "User",
+      "numberOrder": 112,
+      "id": 3
+    },
+    {
+      "commands": [
+        {
+          "id": 1,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 1,
+          "unit": "m2",
+          "sum": 10
+        }
+      ],
+      "total": 14440,
+      "nameClient": "user",
+      "id": 4
+    },
+    {
+      "commands": [
+        {
+          "id": 6,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 12,
+          "unit": "m2",
+          "sum": 120
+        }
+      ],
+      "total": 120,
+      "nameClient": "s",
+      "id": 5
+    },
+    {
+      "commands": [
+        {
+          "id": 5,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 23,
+          "unit": "m2",
+          "sum": 230
+        }
+      ],
+      "total": 230,
+      "nameClient": "s",
+      "id": 6
+    },
+    {
+      "commands": [
+        {
+          "id": 8,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 12,
+          "unit": "m2",
+          "sum": 120
+        },
+        {
+          "id": 16,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 12,
+          "unit": "m2",
+          "sum": 120
+        }
+      ],
+      "total": 12120,
+      "nameClient": "s",
+      "id": 7
+    },
+    {
+      "commands": [
+        {
+          "id": 6,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 5,
+          "unit": "m2",
+          "sum": 50
+        }
+      ],
+      "total": 550,
+      "nameClient": "s",
+      "id": 8
     }
   ],
   "clients": [
@@ -60,24 +175,6 @@
       "id": 1
     },
     {
-      "name": "d",
-      "lastName": "d",
-      "username": "d",
-      "password": "d",
-      "email": "d",
-      "phoneNumber": "d",
-      "id": 2
-    },
-    {
-      "name": "",
-      "lastName": "",
-      "username": "",
-      "password": "s",
-      "email": "s",
-      "phoneNumber": "s",
-      "id": 3
-    },
-    {
       "name": "Egor",
       "lastName": "Semenuk",
       "username": "user",
@@ -86,6 +183,5 @@
       "phoneNumber": "1234455",
       "id": 4
     }
-
   ]
 }

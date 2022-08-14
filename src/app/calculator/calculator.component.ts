@@ -6,6 +6,7 @@ import {PreOrder} from "../enttity/pre-order";
 import {Order} from "../enttity/order";
 
 
+
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',

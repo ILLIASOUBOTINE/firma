@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Client} from "../enttity/client";
+import {AuthService} from "../service/auth.service";
 
 @Component({
   selector: 'app-home-page',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-
-  constructor() { }
+  client: Client;
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+   // this.authService.client$.subscribe((e)=>{this.setClientFromAuthService(e)});
   }
+
+  // private setClientFromAuthService(e: Client) {
+  //   this.client = e;
+  // }
 
 }

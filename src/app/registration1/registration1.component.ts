@@ -34,7 +34,7 @@ export class Registration1Component implements OnInit, DoCheck{
 
   saveNewClient() {
 
-    // this.newClient = this.form.value;
+    this.newClient = this.form.value;
 
      this.checkUsername(this.newClient);
   }

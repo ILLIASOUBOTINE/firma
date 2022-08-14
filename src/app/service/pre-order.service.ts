@@ -4,6 +4,7 @@ import {HttpClient, HttpResponse} from "@angular/common/http";
 import {Order} from "../enttity/order";
 import {Auth} from "../enttity/auth";
 import {ClientPersoService} from "./client-perso.service";
+import {AuthService} from "./auth.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,18 +13,18 @@ export class PreOrderService {
 
   static order: Order;
    auth: Auth;
-  nameClient:string = 'User';
+  //nameClient:string = 'User';
 
   constructor(private http: HttpClient) { }
 
 
-  saveOrder(order: Order){
-    return this.http.post('http://localhost:3000/orders',this.setOrder(order));
+  saveOrder(){
+    return this.http.post('http://localhost:3000/orders',this.setOrder());
   }
 
-  setOrder(finallOrder:Order): Order{
-    PreOrderService.order.nameClient = this.nameClient;
-    PreOrderService.order.numberOrder = 112;
+
+  setOrder(): Order{
+    PreOrderService.order.nameClient = AuthService.client.username;
     return PreOrderService.order;
   }
 

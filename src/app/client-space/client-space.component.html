@@ -2,7 +2,7 @@
 
 
 
-<div *ngIf="exist">
+<div *ngIf=" exist ">
   <h2> My account </h2>
 </div>
 <div *ngIf="!exist">
@@ -15,12 +15,12 @@
       <button class="btn btn-primary">My profile</button>
     </div>
     <div  *ngIf="!exist">
-      <button class="btn btn-primary" (click)="getClientOrders()" routerLink="/client_perso/orders"> My orders</button>
+      <button class="btn btn-primary" (click)="getClientOrders()" > My orders</button>
 <!--      <p *ngIf="messageOrders">{{messageOrders}}</p>-->
     </div>
 
     <div>
-      <button class="btn btn-primary"  routerLink="/content_home"> Go home</button>
+      <button class="btn btn-primary"  routerLink="/client_perso"> My account </button>
     </div>
     <div *ngIf="exist">
       <button class="btn btn-primary"  routerLink="/registration"> Registration</button>
@@ -32,9 +32,13 @@
 </div>
 
 <div>
-<!--  <div  *ngIf="!exist">-->
-<!--    <p class="message-error" *ngIf="messageOrders">{{messageOrders}}</p>-->
-<!--  </div>-->
+  <div  *ngIf="!exist">
+    <p class="message-error" *ngIf="messageOrders">{{messageOrders}}</p>
+  </div>
+
+  <div  *ngIf="exist">
+    <p class="message-error" *ngIf="messagePreOrder">{{messagePreOrder}}</p>
+  </div>
 
   <div *ngIf="exist">
     <div *ngIf="switchAuth">
@@ -44,8 +48,8 @@
   </div>
 
 
-<!--  <div *ngFor="let order of clientOrder">-->
-<!--    <app-order [order]="order"></app-order>-->
-<!--  </div>-->
-  <router-outlet></router-outlet>
+  <div *ngFor="let order of clientOrder">
+    <app-order [order]="order"></app-order>
+  </div>
+<!--  <router-outlet></router-outlet>-->
 </div>

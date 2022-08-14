@@ -9,13 +9,13 @@
   <h2> Hello {{client.name}}</h2>
 </div>
 
-<div class=" space">
+<div class="space">
   <div  class="d-flex justify-content-evenly">
     <div  *ngIf="!exist">
       <button class="btn btn-primary">My profile</button>
     </div>
     <div  *ngIf="!exist">
-      <button class="btn btn-primary" (click)="getClientOrders()" > My orders</button>
+      <button class="btn btn-primary" (click)="getClientOrders()" routerLink="/client_perso/orders"> My orders</button>
 <!--      <p *ngIf="messageOrders">{{messageOrders}}</p>-->
     </div>
 
@@ -25,26 +25,27 @@
     <div *ngIf="exist">
       <button class="btn btn-primary"  routerLink="/registration"> Registration</button>
     </div>
+    <div *ngIf="exist">
+      <button class="btn btn-primary"  (click)="getAuth()"> Sing in</button>
+    </div>
   </div>
 </div>
 
-<div  *ngIf="!exist">
-  <p class="message-error" *ngIf="messageOrders">{{messageOrders}}</p>
-</div>
-
-<div *ngIf="exist">
- <app-autentification ></app-autentification>
-<!--  <div class="input-group ">-->
-<!--    <span class="input-group-text">Entre your username</span>-->
-<!--    <input type="text" aria-label="name" class="form-control" #inputUsername>-->
-<!--    <button type="button" class="btn btn-primary" (click)="getPagePerso(inputUsername)">sign in</button>-->
+<div>
+<!--  <div  *ngIf="!exist">-->
+<!--    <p class="message-error" *ngIf="messageOrders">{{messageOrders}}</p>-->
 <!--  </div>-->
-<!--  <div class="message-error" *ngIf="messageError">-->
-<!--    <p>{{messageError}}</p>-->
+
+  <div *ngIf="exist">
+    <div *ngIf="switchAuth">
+      <app-autentification (singIn)="setClientAndExist($event)" ></app-autentification>
+    </div>
+
+  </div>
+
+
+<!--  <div *ngFor="let order of clientOrder">-->
+<!--    <app-order [order]="order"></app-order>-->
 <!--  </div>-->
-</div>
-
-<div *ngFor="let order of clientOrder">
-  <app-order [order]="order"></app-order>
-
+  <router-outlet></router-outlet>
 </div>

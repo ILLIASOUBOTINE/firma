@@ -24,6 +24,7 @@ import { Registration1Component } from './registration1/registration1.component'
 import {AutentificationComponent} from "./autentification/autentification.component";
 import {OrderComponent} from "./order/order.component";
 import {AuthService} from "./service/auth.service";
+import { OrdersClientComponent } from './orders-client/orders-client.component';
 
 
 
@@ -44,7 +45,8 @@ import {AuthService} from "./service/auth.service";
     ClientSpaceComponent,
     Registration1Component,
     AutentificationComponent,
-    OrderComponent
+    OrderComponent,
+    OrdersClientComponent
   ],
   imports: [
     BrowserModule,

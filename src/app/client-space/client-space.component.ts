@@ -1,14 +1,8 @@
-import {
-  AfterContentChecked,
-  AfterViewChecked,
-  AfterViewInit,
-  Component,
-  DoCheck,
-  OnInit,
-  ViewChild
-} from '@angular/core';
+import {AfterContentChecked, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Order} from "../enttity/order";
 import {ClientPersoService} from "../service/client-perso.service";
+import {AuthService} from "../service/auth.service";
+import {OrdersClientComponent} from "../orders-client/orders-client.component";
 
 import {Client} from "../enttity/client";
 import {AutentificationComponent} from "../autentification/autentification.component";
@@ -22,78 +16,57 @@ import {AutentificationComponent} from "../autentification/autentification.compo
 export class ClientSpaceComponent implements OnInit, DoCheck, AfterViewInit, AfterContentChecked,AfterViewChecked {
   clientOrder: Order[];
   exist: boolean = true;
- username: string;
   client: Client;
-  clients: Client[] ;
-  messageError:string;
   messageOrders: string;
+  switchAuth:boolean = false;
+  // @ViewChild('auth') viewChild: ElementRef;
 
-  @ViewChild(AutentificationComponent)
-  viewChild: AutentificationComponent;
 
-  constructor(private clientServer: ClientPersoService) { }
+  constructor(private clientServer: ClientPersoService, private authService: AuthService) { }
 
   ngDoCheck(): void {
-
+    // this.authService.client$.subscribe((e)=>this.client = e);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  ngAfterContentChecked(): void{
+  ngAfterContentChecked(): void{}
 
-  }
+  ngAfterViewInit() {}
 
-  ngAfterViewInit() {
-    console.log(this.viewChild);
-    //  this.client = this.viewChild.client;
-    //  this.exist = this.viewChild.exist;
-    // console.log(this.viewChild.client);
-    // console.log(this.client);
-    // console.log(this.exist);
-  }
 
-  // getPagePerso(element: HTMLInputElement) {
-  //   this.nameClient = element.value;
-  //   this.clientServer.getClientByUsername(this.nameClient).subscribe(result=>{this.clients = result;
-  //   this.autentificationClient();
-  //   console.log(result)});
-  //
-  // }
-   ngAfterViewChecked(): void {
-     if(!this.viewChild.exist){
-       console.log(this.viewChild);
-       this.client = this.viewChild.client;
-       this.exist = this.viewChild.exist;
-       console.log(this.viewChild.client);
-       console.log(this.client);
-       console.log(this.exist);
-     }
-  }
+   ngAfterViewChecked(): void {}
 
 
 
   getClientOrders(){
+
     this.clientServer.getOrderClient(this.client.username).subscribe(result => {this.clientOrder = result;
-    this.controlOrders();});
+    this.controlOrders();
+    });
     //console.log(this.clientOrder);
   }
 
-  // autentificationClient(){
-  //   if(this.clients.length == 0){
-  //     this.messageError = 'incorrect username'
-  //   }else {
-  //     this.exist = false;
-  //     this.client = this.clients[0];
-  //   }
-  //   console.log(this.client);
-  // }
+
 
   controlOrders(){
+    this.authService.clientOrder$.next(this.clientOrder);
     if(this.clientOrder.length == 0){
       this.messageOrders = 'You don\'t have any orders';
     }
 
+  }
+
+
+  setClientAndExist(transferInformationClient:{ client:Client, exist:boolean}) {
+    this.client = transferInformationClient.client;
+    this.exist = transferInformationClient.exist;
+
+
+  }
+
+  getAuth() {
+    this.switchAuth = !this.switchAuth;
   }
 
 

@@ -1,7 +1,7 @@
 {
   "orders": [
     {
-      "nameClient": "User",
+      "nameClient": "user",
       "numberOrder": 112,
       "commands": [
         {
@@ -44,7 +44,7 @@
         }
       ],
       "total": 320,
-      "nameClient": "User",
+      "nameClient": "user",
       "numberOrder": 112,
       "id": 2
     }
@@ -80,8 +80,8 @@
     {
       "name": "Egor",
       "lastName": "Semenuk",
-      "username": "User",
-      "password": "Semenuk",
+      "username": "user",
+      "password": "user",
       "email": "egor@gmail.com",
       "phoneNumber": "1234455",
       "id": 4

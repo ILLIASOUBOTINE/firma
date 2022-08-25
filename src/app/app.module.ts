@@ -25,6 +25,7 @@ import {AutentificationComponent} from "./autentification/autentification.compon
 import {OrderComponent} from "./order/order.component";
 import {AuthService} from "./service/auth.service";
 import { OrdersClientComponent } from './orders-client/orders-client.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 
 
@@ -46,7 +47,8 @@ import { OrdersClientComponent } from './orders-client/orders-client.component';
     Registration1Component,
     AutentificationComponent,
     OrderComponent,
-    OrdersClientComponent
+    OrdersClientComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,

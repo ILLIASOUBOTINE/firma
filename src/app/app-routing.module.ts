@@ -11,6 +11,8 @@ import {PreOrderComponent} from "./pre-order/pre-order.component";
 import {ClientSpaceComponent} from "./client-space/client-space.component";
 import {Registration1Component} from "./registration1/registration1.component";
 import {OrdersClientComponent} from "./orders-client/orders-client.component";
+import {AutentificationComponent} from "./autentification/autentification.component";
+import {MyProfileComponent} from "./my-profile/my-profile.component";
 
 const routes: Routes =[
   {path: 'home_page', component: HomePageComponent},
@@ -20,10 +22,14 @@ const routes: Routes =[
   {path: 'contacts', component: ContactsComponent},
   {path: 'calculator', component: CalculatorComponent},
   {path: 'pre_order', component: PreOrderComponent},
-  {path: 'client_perso', component: ClientSpaceComponent, children: [
-      {path: 'orders', component: OrdersClientComponent},
-    ] },
+  {path: 'client_perso', component: ClientSpaceComponent,},
+  {path: 'orders', component: OrdersClientComponent},
   {path: 'registration', component: Registration1Component},
+  {path: 'autentification', component: AutentificationComponent},
+  {path: 'my_profile', component: MyProfileComponent},
+
+
+
   {path: '', redirectTo: 'home_page', pathMatch: 'full'}
   ]
 

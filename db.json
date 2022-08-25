@@ -162,6 +162,44 @@
       "total": 550,
       "nameClient": "s",
       "id": 8
+    },
+    {
+      "commands": [
+        {
+          "id": 2,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 1,
+          "unit": "m2",
+          "sum": 10
+        },
+        {
+          "id": 2,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 1,
+          "unit": "m2",
+          "sum": 10
+        }
+      ],
+      "total": 310,
+      "nameClient": "egor1",
+      "id": 9
+    },
+    {
+      "commands": [
+        {
+          "id": 7,
+          "name": "aaaaaaaaaaaa",
+          "price": 10,
+          "amount": 2,
+          "unit": "m2",
+          "sum": 20
+        }
+      ],
+      "total": 2230,
+      "nameClient": "egor1",
+      "id": 10
     }
   ],
   "clients": [
@@ -182,6 +220,42 @@
       "email": "egor@gmail.com",
       "phoneNumber": "1234455",
       "id": 4
+    },
+    {
+      "name": "",
+      "lastName": "",
+      "username": "egor",
+      "password": "21",
+      "email": "",
+      "phoneNumber": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "lastName": "",
+      "username": "",
+      "password": "",
+      "email": "",
+      "phoneNumber": "",
+      "id": 6
+    },
+    {
+      "name": "egor",
+      "lastName": "",
+      "username": "egor1",
+      "password": "21",
+      "email": "",
+      "phoneNumber": "",
+      "id": 7
+    },
+    {
+      "name": "h",
+      "lastName": "h",
+      "username": "h",
+      "password": "h",
+      "email": "h",
+      "phoneNumber": "h",
+      "id": 8
     }
   ]
 }

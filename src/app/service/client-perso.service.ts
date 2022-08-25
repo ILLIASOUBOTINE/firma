@@ -27,5 +27,8 @@ export class ClientPersoService {
     return this.http.post('http://localhost:3000/clients', newClient);
   }
 
+  updateClient(updateClient: Client, id: number){
+    return this.http.put(`http://localhost:3000/clients/${id}`, updateClient);
+  }
 
 }

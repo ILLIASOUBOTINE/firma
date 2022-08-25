@@ -12,18 +12,19 @@
 <div class="space">
   <div  class="d-flex justify-content-evenly">
     <div  *ngIf="!exist">
-      <button class="btn btn-primary">My profile</button>
+      <button class="btn btn-primary"  routerLink="/my_profile" >My profile</button>
     </div>
     <div  *ngIf="!exist">
       <button class="btn btn-primary" (click)="getClientOrders()" > My orders</button>
 <!--      <p *ngIf="messageOrders">{{messageOrders}}</p>-->
     </div>
 
-    <div>
-      <button class="btn btn-primary"  routerLink="/client_perso"> My account </button>
-    </div>
+<!--    <div>-->
+<!--      <button class="btn btn-primary"  routerLink="/client_perso"> My account </button>-->
+<!--    </div>-->
     <div *ngIf="exist">
       <button class="btn btn-primary"  routerLink="/registration"> Registration</button>
+
     </div>
     <div *ngIf="exist">
       <button class="btn btn-primary"  (click)="getAuth()"> Sing in</button>
@@ -51,5 +52,5 @@
   <div *ngFor="let order of clientOrder">
     <app-order [order]="order"></app-order>
   </div>
-<!--  <router-outlet></router-outlet>-->
+
 </div>

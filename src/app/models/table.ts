@@ -15,13 +15,8 @@ export const TABLE_PRODUCT: Product[] = [
   {id: 12, name: 'aaaaaaaaaaaa', price: 10, unit: 'm2'},
   {id: 13, name: 'aaaaaaaaaaaa', price: 10, unit: 'm2'},
   {id: 14, name: 'aaaaaaaaaaaa', price: 10, unit: 'm2'},
-  {id: 15, name: 'aaaaaaaaaaaa', price: 10, unit: 'm2'},
-  {id: 16, name: 'aaaaaaaaaaaa', price: 10, unit: 'm2'},
-  {id: 17, name: 'aaaaaaaaaaaa', price: 10, unit: 'm2'},
-  {id: 18, name: 'aaaaaaaaaaaa', price: 10, unit: 'm2'},
-  {id: 19, name: 'aaaaaaaaaaaa', price: 10, unit: 'm2'},
-  {id: 20, name: 'aaaaaaaaaaaa', price: 10, unit: 'm2'},
-  {id: 21, name: 'aaaaaaaaaaaa', price: 10, unit: 'm2'}
+  {id: 15, name: 'aaaaaaaaaaaa', price: 10, unit: 'm2'}
+
 ];
 
 

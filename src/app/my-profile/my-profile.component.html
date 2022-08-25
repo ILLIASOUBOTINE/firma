@@ -1,0 +1,47 @@
+
+<div *ngIf="switch2">
+  <div>
+    <h2>My profile</h2>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="saveModification()" class="row g-3">
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label" >Name</label>
+      <input type="text" class="form-control" id="validationDefault01" formControlName="name" >
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label" >Last name</label>
+      <input type="text" class="form-control" id="validationDefault02" formControlName="lastName">
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault03" class="form-label">Username</label>
+      <input type="text" class="form-control" id="validationDefault03" formControlName="username">
+      <p style="color: red" *ngIf="message">{{message}}</p>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault04" class="form-label">Password</label>
+      <input type="text" class="form-control" id="validationDefault04" formControlName="password">
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault05" class="form-label">Email</label>
+      <input type="text" class="form-control" id="validationDefault05" formControlName="email">
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault06" class="form-label">PhoneNumber</label>
+      <input type="text" class="form-control" id="validationDefault06" formControlName="phoneNumber">
+    </div>
+
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+      <button class="btn btn-primary" routerLink="/client_perso">Come back</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="!switch2">
+  <p style="color: blue" *ngIf="message">{{message}}</p>
+  <p style="color: blue">For continue press button </p>
+  <button class="btn btn-primary" routerLink="/client_perso">Gooo tooo</button>
+</div>
+

@@ -3,6 +3,8 @@ import {Client} from "../enttity/client";
 import {FormControl, FormGroup} from "@angular/forms";
 import {ClientPersoService} from "../service/client-perso.service";
 import {AuthService} from "../service/auth.service";
+import {Order} from "../enttity/order";
+import {PreOrderService} from "../service/pre-order.service";
 
 @Component({
   selector: 'app-my-profile',
@@ -17,8 +19,10 @@ export class MyProfileComponent implements OnInit {
   message:string;
   switch2:boolean = true;
   updateClient: Client;
+  orders: Order[];
 
-  constructor(public clientPersoService: ClientPersoService, private authService: AuthService) { }
+  constructor(public clientPersoService: ClientPersoService, private authService: AuthService,
+              private preOrderService: PreOrderService){ }
 
 
 
@@ -36,6 +40,7 @@ export class MyProfileComponent implements OnInit {
   }
 
   saveModification() {
+    AuthService.exist = !AuthService.exist;
     this.updateClient = this.form.value;
     this.checkUsername(this.updateClient);
     console.log(this.client.id);
@@ -53,11 +58,25 @@ export class MyProfileComponent implements OnInit {
       this.message = 'update completed successfully';
       AuthService.client = this.updateClient;
       this.authService.client$.next(this.updateClient);
+
+      this.updateOrderClient();
       this.switch2 = false;
     }else {
       this.message = 'User with username: ' + this.updateClient.username + ' already exists, change your username';
     }
 
+  }
+
+  updateOrderClient(){
+
+    this.clientPersoService.getOrderClient(this.client.username).subscribe(result =>{this.orders = result;
+      if(this.orders.length > 0){
+        this.orders.forEach(e => {e.nameClient = this.updateClient.username;
+          this.preOrderService.upDateOrder(e).subscribe();
+        });
+        console.log(this.orders);
+      }
+    });
   }
 
 

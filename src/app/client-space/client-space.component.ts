@@ -14,10 +14,10 @@ import {PreOrderService} from "../service/pre-order.service";
   templateUrl: './client-space.component.html',
   styleUrls: ['./client-space.component.css']
 })
-export class ClientSpaceComponent implements OnInit, DoCheck, AfterViewInit, AfterContentChecked,AfterViewChecked {
+export class ClientSpaceComponent implements OnInit, DoCheck {
   clientOrder: Order[];
   exist: boolean ;
-  client: Client;
+  client!: Client;
   messageOrders: string;
   switchAuth:boolean = false;
   messagePreOrder:string;
@@ -28,49 +28,28 @@ export class ClientSpaceComponent implements OnInit, DoCheck, AfterViewInit, Aft
 
   ngDoCheck(): void {
     this.messagePreOrder = AuthService.messagePreOrder;
-    console.log(PreOrderService.order);
-    console.log(AuthService.messagePreOrder);
+    //console.log(PreOrderService.order);
+    //console.log(AuthService.messagePreOrder);
 
   }
 
   ngOnInit(): void {
     this.client = AuthService.client;
     this.exist = AuthService.exist;
-
   }
-
-  ngAfterContentChecked(): void{}
-
-  ngAfterViewInit() {
-
-  }
-
-
-   ngAfterViewChecked(): void {
-
-   }
-
-
 
   getClientOrders(){
 
     this.clientServer.getOrderClient(this.client.username).subscribe(result => {this.clientOrder = result;
     this.controlOrders();
     AuthService.clientOrder = this.clientOrder});
-    //console.log(this.clientOrder);
   }
 
-
-
   controlOrders(){
-    //this.authService.clientOrder$.next(this.clientOrder);
-
     if(this.clientOrder.length == 0){
       this.messageOrders = 'You don\'t have any orders';
     }
-
   }
-
 
   setClientAndExist(transferInformationClient:{ client:Client, exist:boolean}) {
     this.client = transferInformationClient.client;
@@ -79,9 +58,11 @@ export class ClientSpaceComponent implements OnInit, DoCheck, AfterViewInit, Aft
 
   getAuth() {
     this.switchAuth = !this.switchAuth;
-
   }
 
-
-
+  logOut() {
+    this.exist = !this.exist;
+    //AuthService.client;
+    AuthService.exist = this.exist;
+  }
 }

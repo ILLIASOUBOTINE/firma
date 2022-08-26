@@ -16,12 +16,11 @@
     </div>
     <div  *ngIf="!exist">
       <button class="btn btn-primary" (click)="getClientOrders()" > My orders</button>
-<!--      <p *ngIf="messageOrders">{{messageOrders}}</p>-->
+    </div>
+    <div  *ngIf="!exist">
+      <button class="btn btn-primary" (click)="logOut()"  routerLink="/client_perso" >LogOUT</button>
     </div>
 
-<!--    <div>-->
-<!--      <button class="btn btn-primary"  routerLink="/client_perso"> My account </button>-->
-<!--    </div>-->
     <div *ngIf="exist">
       <button class="btn btn-primary"  routerLink="/registration"> Registration</button>
 

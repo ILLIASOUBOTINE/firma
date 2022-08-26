@@ -22,8 +22,8 @@ export class PreOrderService {
     return this.http.post('http://localhost:3000/orders',this.setOrder());
   }
 
-  upDateOrder(id:number){
-    return this.http.put(`http://localhost:3000/orders/${id}`, this.setOrder());
+  upDateOrder( order:Order){
+    return this.http.put(`http://localhost:3000/orders/${order.id}`, order);
   }
 
 
